@@ -20,6 +20,10 @@ Our fictional company will have three departments: `Sales`, `Finance`, and `IT`.
 
 To create each department OU, right-click `RichTech-Staff`, then select `New > Organisational Unit` and enter the department name.
 
+![](images/adding-ous-images/ad-new.png)
+
+![](images/adding-ous-images/ad-new-ou.png)
+
 ### Creating users
 
 - Right-click the OU where you want to create the user.
@@ -30,9 +34,13 @@ Follow the username convention: `first initial`.`surname`.
 
 For example, if the user is John Doe, the username would be `j.doe`.
 
+![](images/adding-ous-images/ad-new-user-1.png)
+
 - Click `Next`.
 - Set a password and select `User must change password at next logon`.
 - Complete the wizard to create the user.
+
+![](images/adding-ous-images/ad-new-user-2.png)
 
 Create at least two users for each OU.
 
@@ -46,6 +54,8 @@ Configure the following settings:
 - Group scope: `Global`
 - Group type: `Security`
   Click `OK`, then repeat the process for the `Finance` and `IT` OUs.
+
+![](images/adding-ous-images/ad-new-grp.png)
 
 **Adding Users to Groups**
 
@@ -68,6 +78,8 @@ To verify group membership, double-click a user account and open the `Member Of`
 - Click `OK` twice, then click `Close` to exit the dialog boxes.
   > Note: Permissions are assigned to groups instead of individual users. This approach is known as Role-Based Access Control (RBAC) and is easier to manage, especially in environments with many users.
 
+![](images/adding-ous-images/shared-permission-1.png)
+
 ### Configuring NTFS permissions
 
 - Right-click the folder and select `Properties`, then open the `Security` tab.
@@ -75,5 +87,9 @@ To verify group membership, double-click a user account and open the `Member Of`
 - Under `Group or user names`, select the appropriate group and enable the `Modify` permission.
 - Do not enable `Full Control`, as this would allow users to change permissions and take ownership of files and folders.
 - Click `OK` to apply the changes.
+
+![](images/adding-ous-images/shared-permission-2.png)
+
+![](images/adding-ous-images/shared-permission-3.png)
 
 Now the server is complete.
