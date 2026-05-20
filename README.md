@@ -130,6 +130,10 @@ Topics include:
 
 ### Configuring Group Policy Objects [[>>]](gpo.md)
 
+Topics include:
+
+- Setting lockout policy
+
 ### Support Examples [[>>]](support-examples/README.md)
 
 This section contains curated IT support scenarios and troubleshooting examples based on the lab environment.
