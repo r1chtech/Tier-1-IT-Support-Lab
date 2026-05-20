@@ -25,6 +25,8 @@
 
 > Note: This policy will not take effect until the next automatic refresh cycle.
 
+![](images/gpo-images/gpo-lockout.png)
+
 **To Force Policy to Take Effect Immediately,**
 
 - Open command line as administrator.
