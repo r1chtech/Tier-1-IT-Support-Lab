@@ -16,7 +16,7 @@ I would then verify Carol's account is active and unlocked in AD.
 Then I would check if Carol is a member of Finance-Team and check that the Finance-Team has correct permissions on the shared folder.
 If everything is true, check if Carol is connected to right network as a last resort.
 
-> Note: Escalate to a IT member if none of the above resolves the issue.
+> Note: Escalate to a senior IT member if none of the above resolves the issue.
 
 **Closing Ticket**
 
