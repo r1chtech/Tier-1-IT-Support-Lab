@@ -15,6 +15,10 @@
 - Set the RAM and CPU cores based on your VM requirements and what your host machine can comfortably handle. I used `4 GB RAM` and `4 CPU cores`.
 - Set the virtual disk size (I left the default `50 GB`), then click `Next` and `Finish` to create the VM.
 
+![](images/setting-client-images/vm-client-1.png)
+
+![](images/setting-client-images/vm-client-2.png)
+
 **Configuring Network Adapter**
 
 - Select the new VM and open `Settings > Network`.
@@ -22,23 +26,34 @@
 - On `Adapter 2`, enable the network adapter, attach it to an `Internal Network`, and use the same internal network name as the one for the server(`RichTech-LAN`).
 - Click `OK` to save the settings.
 
+![](images/setting-client-images/vm-client-3.png)
+
 **Mounting ISO file**
 
 - Open `Settings > Storage`.
-- Under `Controller: IDE`, select the empty disc icon. On the right side, click the small disc icon next to `Optical Drive`, then select `Choose a disk file`.
+- Under `Controller: IDE/SATA`, select the empty disc icon. On the right side, click the small disc icon next to `Optical Drive`, then select `Choose a disk file`.
 - Browse to your ISO location (mine was `/mnt/storage/RichTech-Lab/ISOs/`) and select the `Windows Server 2022` ISO.
+
+![](images/setting-client-images/vm-client-4.png)
 
 ### Installing Windows 10 Pro
 
 - Start the VM. Most of the installation process is straightforward. The main steps that matter are selecting the correct edition, partitioning the disk, and creating a local account.
 - For the edition, choose Windows 10 Pro, as it includes the features required for an enterprise environment.
+
+![](images/setting-client-images/vm-client-5.png)
+
 - For disk partitioning, you will see a single unallocated disk using the size you selected earlier. Select it and click Next.
+
+![](images/setting-client-images/vm-client-6.png)
+
 - After Windows finishes installing and the VM restarts, complete the initial setup. When prompted to sign in, choose Connect to a domain instead. This allows you to create a local account instead of using a Microsoft account.
 - Use LocalAdmin as the username and choose a password. Continue through the remaining setup steps to complete the installation.
 
 ### Renaming client computers
 
 After successfully setting up Windows, the next step is to rename the computer.
+
 - Right-click the Start button and select System. Click Rename this PC and enter the new computer name. In this example, the computer name is RICHTECH-PC01.
 - You will be prompted to restart the computer. You can restart immediately or choose to do it later after configuring the IP address settings.
 
@@ -58,7 +73,6 @@ After successfully setting up Windows, the next step is to rename the computer.
   - Preferred DNS Server: 192.168.10.1
     DNS queries will be handled by the server.
 - Click OK to save the settings, then restart the computer
-
 
 ### Joining computers to the domain
 
