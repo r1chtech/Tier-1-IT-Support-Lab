@@ -10,10 +10,23 @@ Hi IT, it's Carol from Finance. I've been trying to access the Finance shared dr
 ```
 
 **Resolution Approach**
-I would call Carol to confirm the exact error. Also, is she the only person experiencing this issue?. While waiting for Carol to confirm, I would check if Carol is a member of the Finance group. I would also check if the Finance group has the right permission to access the folder.
-If Carol has mistakenly been removed from the group, re-add her and email her to confirm access.
-If she still doesnt have permission, this maybe a network issue. Check with Carol if she is connected to the internal network and not hotspot or other external network. I would assist her reconnect to the internal network.
+I would confirm exact error message with Carol and check if others are affected.
+I would then verify Carol's account is active and unlocked in AD.
+Then I would check if Carol is a member of Finance-Team and check that the Finance-Team has correct permissions on the shared folder.
+If everything is true, I would check if Carol is connected to right network as a last resort.
+
+> Note: Escalate to a higher if nothing resolves the issue
 
 **Closing Ticket**
 
 **Work Note Example**
+
+- Ticket received from Carol in Finance Department reporting that she is unable to access the finance shared folder.
+- Contacted Carol to confirm the exact error ("Access Denied" when navigating to \RICHTECH-DC01\Finance) and whether others are also affected(no other staff reporting the issue).
+- Checked whether account is locked or disabled.
+- Checked Finance group members and Carol was not in the list.
+- Added Carol to the Finance group.
+- Confirmed with Carol and folder access is successful.
+- Cause of group membership removal undetermined — flagged to senior IT member.
+
+No further issues reported. Resolved.
