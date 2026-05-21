@@ -10,12 +10,13 @@ Hi IT, it's Carol from Finance. I've been trying to access the Finance shared dr
 ```
 
 **Resolution Approach**
+
 I would confirm exact error message with Carol and check if others are affected.
 I would then verify Carol's account is active and unlocked in AD.
 Then I would check if Carol is a member of Finance-Team and check that the Finance-Team has correct permissions on the shared folder.
-If everything is true, I would check if Carol is connected to right network as a last resort.
+If everything is true, check if Carol is connected to right network as a last resort.
 
-> Note: Escalate to a higher if nothing resolves the issue
+> Note: Escalate to a IT member if none of the above resolves the issue.
 
 **Closing Ticket**
 
