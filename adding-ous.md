@@ -3,7 +3,6 @@
 - [Creating Organisational Units (OUs)](#creating-organisational-units-ous)
 - [Creating users](#creating-users)
 - [Creating security groups](#creating-security-groups)
-- [Understanding enterprise-style organisation](#understanding-enterprise-style-organisation)
 - [Creating shared folders](#creating-shared-folders)
 - [Configuring network share permissions](#configuring-network-share-permissions)
 - [Configuring NTFS permissions](#configuring-ntfs-permissions)

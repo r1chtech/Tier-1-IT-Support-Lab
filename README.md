@@ -33,6 +33,7 @@ For realism, I used the fictional company name RICHTECH, though you can replace 
 - [Setting Up Client Computers](#setting-up-client-computers)
 - [Configuring Group Policy Objects](#configuring-group-policy-objects)
 - [Support Examples](#support-examples)
+- [Resources](#resources)
 
 ### Lab Overview
 
@@ -137,3 +138,8 @@ Topics include:
 ### Support Examples [[>>]](support-examples/README.md)
 
 This section contains curated IT support scenarios and troubleshooting examples based on the lab environment.
+
+### Resources
+
+-
+- https://activedirectorypro.com/install-rsat-remote-server-administration-tools-windows-10/
