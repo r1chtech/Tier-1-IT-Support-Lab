@@ -1,6 +1,6 @@
 ### Adding Active Directory Tools to a Workstation
 
-- Assume John Doe works in IT, specifically on the helpdesk. John Doe will have two accounts: one standard user account and one administrative account.
+- We will use John Doe as an example. John Doe is a member of the Helpdesk-Team and possesses two accounts: a standard user account for daily activities and an administrative account for privileged tasks
 
 - John Doe logs into a workstation for the first time using his standard account. He searches for Active Directory, but it does not exist.
 
