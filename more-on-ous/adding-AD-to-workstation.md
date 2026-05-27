@@ -28,7 +28,7 @@ Add-WindowsCapability -Online -Name Rsat.ActiveDirectory.DS-LDS.Tools~~~~0.0.1.0
 
 - Hold shift key and right click on Active Directory Users and Computers on the taskbar and select `run as different user`.
 
-  > Note: Delegated AD permissions do not equal local administrator rights that is why you choose 'run as different account' instead of 'run as administrator'. Delegation does not add users to the local administrators group.
+  > Note: Delegated AD permissions do not equal local administrator rights that is why you choose 'run as different account' instead of 'run as administrator'. Delegation grant object level rights in AD and does not add users to the local administrators group.
 
 - When prompted, enter the administrative credentials. for example: username `RICHTECH\adm-j.doe`.
 
