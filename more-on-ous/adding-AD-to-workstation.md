@@ -24,9 +24,9 @@ Add-WindowsCapability -Online -Name Rsat.ActiveDirectory.DS-LDS.Tools~~~~0.0.1.0
 
 - After installation, press `Win + R` to open the Run dialog, then type dsa.msc to open Active Directory Users and Computers.
 
-- Close Active Directory Users and Computers at this point because John Doe has no elevated privileges, and therefore cannot perform any administrative actions.
+- Pin Active Directory Users and Computers to the taskbar and close it at this point because John Doe has no elevated privileges, and therefore cannot perform any administrative actions.
 
-- Click Start, search for Active Directory Users and Computers, right‑click it, and select Run as administrator.
+- Hold shift key and right click on Active Directory Users and Computers on the taskbar and select run as different user.
 
 - When prompted, enter the administrative credentials. for example: username `RICHTECH\adm-j.doe`.
 

@@ -141,5 +141,6 @@ This section contains curated IT support scenarios and troubleshooting examples 
 
 ### Resources
 
--
+- https://www.youtube.com/watch?v=Q4I2lKHboDw
+- https://www.youtube.com/watch?v=85-bp7XxWDQ
 - https://activedirectorypro.com/install-rsat-remote-server-administration-tools-windows-10/
