@@ -43,6 +43,33 @@ For example, if the user is John Doe, the username would be `j.doe`.
 
 Create at least two users for each OU.
 
+**Creating Users with Elevated Rights in AD**
+
+- Assume one of our users, John Doe (j.doe), works on the IT helpdesk. In an enterprise environment, John Doe will have two accounts: one for daily login (standard user) and another for performing administrative tasks, such as creating new users.
+
+- First, create a new OU and name it Administrators.
+
+- Under the Administrators OU, create a new user with the username `adm-j.doe`. The `adm` prefix indicates that this is an administrative account.
+
+- Create a global security group named 'Helpdesk-Team' and add the `adm-j.doe` account to this group.
+
+- Now, delegate object‑specific rights in Active Directory to the Helpdesk-Team group:
+  - Right‑click the target OU (for example, the Sales OU) and select Delegate Control.
+
+  - In the Delegation of Control Wizard, click Next.
+
+  - On the Users or Groups page, click Add to add the Helpdesk-Team group, then click Next.
+
+  - On the Tasks to Delegate page, select Delegate the following common tasks, then check `Create, delete, and manage user accounts` and `Reset user passwords and force password change at next logon`.
+
+  ![](images/adding-ous-images/delegate-1.png)
+
+  > Note: These two options are typically all that a helpdesk user requires. Note that many other tasks are available, and these can be selected based on the specific administrative group (for example, a network admin team would need different delegated rights)
+
+- Click Next, review the summary page, and click Finish.
+
+> For more information on how these two accounts are used in practice, see this section [[>>]](more-on-ous/adding-AD-to-workstation.md)
+
 ### Creating security groups
 
 In real environments, permissions are rarely assigned directly to individual users. Instead, permissions are assigned to groups, and users are added to those groups.
