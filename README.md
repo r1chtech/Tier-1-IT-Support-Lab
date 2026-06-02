@@ -30,9 +30,9 @@ For realism, I used the fictional company name RICHTECH, though you can replace 
 - [Requirements](#requirements)
 - [Setting Up Server](#setting-up-server)
 - [Adding OUs, Users and Groups](#adding-ous-users-and-groups)
-- [More on OUs, Users and Groups](#more-on-ous-users-and-groups)
 - [Setting Up Client Computers](#setting-up-client-computers)
 - [Configuring Group Policy Objects](#configuring-group-policy-objects)
+- [More on OUs, Users and Groups](#more-on-ous-users-and-groups)
 - [Support Examples](#support-examples)
 - [Resources](#resources)
 
@@ -118,10 +118,6 @@ Topics include:
 - Configuring network share permissions
 - Configuring NTFS permissions
 
-### More on OUs, Users and Groups [[>>]](more-on-ous/README.md)
-
-This section main covers using the command line interface for administration in active directory.
-
 ### Setting Up Client Computers [[>>]](setting-up-clients.md)
 
 This section covers configuring the Windows 10 client workstations.
@@ -139,6 +135,10 @@ Topics include:
 Topics include:
 
 - Setting lockout policy
+
+### More on OUs, Users and Groups [[>>]](more-on-ous/README.md)
+
+This section main covers using the command line interface for administration in active directory.
 
 ### Support Examples [[>>]](support-examples/README.md)
 
