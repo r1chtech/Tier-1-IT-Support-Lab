@@ -33,3 +33,5 @@ Add-WindowsCapability -Online -Name Rsat.ActiveDirectory.DS-LDS.Tools~~~~0.0.1.0
 - When prompted, enter the administrative credentials. for example: username `RICHTECH\adm-j.doe`.
 
 > Note: For GUI installation instructions, refer to [this site](https://activedirectorypro.com/install-rsat-remote-server-administration-tools-windows-10/).
+
+Next --> [managing OUs, user and groups using powershell](managing-ous-cli.md)
