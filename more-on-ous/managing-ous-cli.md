@@ -1,5 +1,6 @@
 ### Sections
 
+- [Overview](#overview)
 - [Creating and Removing Organisational Units (OUs) in AD](#creating-and-removing-organisational-units-ous)
 - [Managing users in AD](#managing-users)
 - [Managing security groups in AD](#managing-users-in-ad)
@@ -50,10 +51,14 @@ Log into RICHTECH-DC01 and open PowerShell. By default, it should open as admini
   - Name: specifies the name of the new OU.
 
 - Verify that OU has has been created using
+
   ```ps1
   Get-ADOrganizationalUnit -Filter 'Name -like "TestOU"'
   ```
+
   You should see the details of the OU displayed.
+
+  ![](../images/more-on-ous-images/ou-cli-1.png)
 
 **Deleting OU**
 
@@ -70,11 +75,17 @@ Log into RICHTECH-DC01 and open PowerShell. By default, it should open as admini
   Remove-ADOrganizationalUnit -Identity "OU=TestOU,OU=RichTech-Staff,DC=richtech,DC=local"
   ```
 
+  Input `Y` to confirm deletion when prompted.
+
 - Verify that the OU has been removed by running
+
   ```ps1
   Get-ADOrganizationalUnit -Filter 'Name -like "TestOU"'
   ```
+
   No output should be returned because the OU no longer exists.
+
+  ![](../images/more-on-ous-images/ou-cli-2.png)
 
 ### Managing Users in AD
 
