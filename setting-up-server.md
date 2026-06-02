@@ -111,3 +111,5 @@ Click OK to close the IPv4 properties, then OK/Close on the adapter properties.
 - After reboot, the sign-in should show COMPANY\Administrator (or your domain\Administrator).
 
 ![](images/setting-server-images/vm-server-12.png)
+
+Next [Setting up clients [>>]](setting-up-clients.md)
