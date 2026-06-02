@@ -1,9 +1,9 @@
 ### Sections
 
 - [Overview](#overview)
-- [Creating and Removing Organisational Units (OUs) in AD](#creating-and-removing-organisational-units-ous)
-- [Managing users in AD](#managing-users)
-- [Managing security groups in AD](#managing-users-in-ad)
+- [Creating and Removing Organisational Units (OUs) in AD](#creating-and-removing-organisational-units-ous-in-ad)
+- [Managing users in AD](#managing-users-in-ad)
+- [Managing security groups in AD](#managing-security-groups-in-ad)
 - [Creating shared folders](#creating-shared-folders)
 - [Configuring network share permissions](#configuring-network-share-permissions)
 - [Configuring NTFS permissions](#configuring-ntfs-permissions)
