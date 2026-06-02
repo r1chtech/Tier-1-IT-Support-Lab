@@ -112,4 +112,4 @@ Click OK to close the IPv4 properties, then OK/Close on the adapter properties.
 
 ![](images/setting-server-images/vm-server-12.png)
 
-Next [Setting up clients [>>]](setting-up-clients.md)
+Next --> [adding OUs, users and groups [>>]](adding-ous.md)
