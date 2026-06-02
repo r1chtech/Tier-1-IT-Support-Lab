@@ -120,4 +120,4 @@ To verify group membership, double-click a user account and open the `Member Of`
 
 Now the server is complete.
 
-Next --> [setting up clients](setting-up-clients.md)
+Next --> [setting up clients [>>]](setting-up-clients.md)
