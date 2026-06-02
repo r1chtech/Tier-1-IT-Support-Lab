@@ -115,6 +115,8 @@ Log into RICHTECH-DC01 and open PowerShell. By default, it should open as admini
 
   The -Identity value (`"CN=Kofi Annan,CN=Users,DC=richtech,DC=local"`) is the Distinguished Name (DN) of the user, which you can retrieve from the Get-ADUser output.
 
+  ![](../images/more-on-ous-images/user-cli-1.png)
+
 - Verify the move using the command below
 
   ```ps1
@@ -150,7 +152,11 @@ Log into RICHTECH-DC01 and open PowerShell. By default, it should open as admini
   ```
 
 - Verify the changes using the 'Get-ADUser' command mentioned earlier
+
+  ![](../images/more-on-ous-images/user-cli-2.png)
+
 - Alternatively, you can create the user and set all attributes in one command. This assumes you have already stored the password in the `$passwd` variable.
+
   ```ps1
   New-ADUser `
   -Path "OU=Finance,OU=RichTech-Staff,DC=richtech,DC=local" `
@@ -164,6 +170,8 @@ Log into RICHTECH-DC01 and open PowerShell. By default, it should open as admini
   -Enabled $true
   ```
 
+  ![](../images/more-on-ous-images/user-cli-3.png)
+
 **Removing User**
 
 - To remove a user from Active Directory, use the Remove-ADUser cmdlet as shown below:
@@ -175,6 +183,8 @@ Log into RICHTECH-DC01 and open PowerShell. By default, it should open as admini
   When prompted to confirm, type `Y` (for Yes) and press Enter.
 
   > Note: This action is irreversible. Deleted users are not moved to a Recycle Bin by default unless the Active Directory Recycle Bin has been enabled. [Read more](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/adac/active-directory-recycle-bin?tabs=adac)
+
+  ![](../images/more-on-ous-images/user-cli-4.png)
 
 ### Managing Security Groups in AD
 
