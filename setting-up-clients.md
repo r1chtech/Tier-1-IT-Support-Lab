@@ -89,3 +89,5 @@ After successfully setting up Windows, the next step is to rename the computer.
 - After the restart, the login screen will display an Other user option. Select it, and you should see the company or domain name displayed below the password field.
 
 ![](images/setting-client-images/vm-client-10.png)
+
+Next --> [setting lockout policy [>>]](gpo.md)

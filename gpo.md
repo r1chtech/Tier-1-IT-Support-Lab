@@ -32,3 +32,5 @@
 - Open command line as administrator.
 - Type command `gpupdate /force` then press Enter.
 - Once it is done, check lockout work using a clients workstation. [See ticket 2](support-examples/ticket-2.md)
+
+Next --> [more on OUs, users and groups [>>]](/more-on-ous/adding-AD-to-workstation.md)
