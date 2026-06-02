@@ -149,3 +149,4 @@ This section contains curated IT support scenarios and troubleshooting examples 
 - https://www.youtube.com/watch?v=Q4I2lKHboDw
 - https://www.youtube.com/watch?v=85-bp7XxWDQ
 - https://activedirectorypro.com/install-rsat-remote-server-administration-tools-windows-10/
+- https://learn.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2025-ps
