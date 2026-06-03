@@ -221,10 +221,18 @@ Log into RICHTECH-DC01 and open PowerShell. By default, it should open as admini
 
   `-Members`: an array (comma‑separated list) of user names to add to the group.
 
+- Use below to confirm members have been added.
+
+  ```ps1
+  Get-ADGroupMember -Identity "TesterGrp"
+  ```
+
+  ![](../images/more-on-ous-images/grp-cli-1.png)
+
 - You can also rename a group. First, rename the distinguished name using:
 
   ```ps1
-  Rename-ADObject -Identity "TesterGrp" -NewName "Sales-Managers"
+  Rename-ADObject -Identity "CN=TesterGrp,OU=Sales,OU=RichTech-Staff,DC=richtech,DC=local" -NewName "Sales-Managers"
   ```
 
   > Note: This cmdlet only changes the object's distinguished name (the CN portion). It does not update the SamAccountName or DisplayName.
@@ -235,6 +243,8 @@ Log into RICHTECH-DC01 and open PowerShell. By default, it should open as admini
   Set-ADGroup -Identity "TesterGrp" -DisplayName "Sales-Managers" -SamAccountName "Sales-Managers"
   ```
 
+  ![](../images/more-on-ous-images/grp-cli-2.png)
+
 **Removing a Group**
 
 - To remove a group from Active Directory, use the Remove-ADGroup cmdlet as shown below.
@@ -244,6 +254,8 @@ Log into RICHTECH-DC01 and open PowerShell. By default, it should open as admini
   ```
 
   When prompted to confirm, type `Y` (for Yes) and press Enter.
+
+  ![](../images/more-on-ous-images/grp-cli-3.png)
 
 ### Creating Shared Folders
 
