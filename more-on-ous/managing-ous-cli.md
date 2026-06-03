@@ -174,7 +174,7 @@ Log into RICHTECH-DC01 and open PowerShell. By default, it should open as admini
 
 **Removing User**
 
-- To remove a user from Active Directory, use the Remove-ADUser cmdlet as shown below:
+- To remove a user from Active Directory, use the Remove-ADUser cmdlet as shown below.
 
   ```ps1
   Remove-ADUser -Identity "k.annan"
@@ -187,6 +187,63 @@ Log into RICHTECH-DC01 and open PowerShell. By default, it should open as admini
   ![](../images/more-on-ous-images/user-cli-4.png)
 
 ### Managing Security Groups in AD
+
+**Creating a Group**
+
+- To create a new group, use the New-ADGroup cmdlet as shown below:
+
+  ```ps1
+  New-ADGroup -Path "OU=Sales,OU=RichTech-Staff,DC=richtech,DC=local" -Name "TesterGrp" -GroupScope 1 -GroupCategory 1
+  ```
+
+  `-GroupScope`: specifies the scope for the group. Acceptable values are:
+  - DomainLocal or 0
+  - Global or 1
+  - Universal or 2
+
+  `-GroupCategory`: specifies the type of group. Acceptable values are:
+  - Distribution or 0 (used for email distribution lists)
+  - Security or 1 (for permissions; this is the default parameter)
+
+- Verify that the group has been created using
+
+  ```ps1
+  Get-ADGroup -Identity "TesterGrp"
+  ```
+
+- Add members using the 'Add-ADGroupMember' cmdlet.
+
+  ```ps1
+  Add-ADGroupMember -Identity "TesterGrp" -Members "a.carter", "b.marsh"
+  ```
+
+  `-Identity`: is the name or distinguished name of the group you wish to add members to.
+
+  `-Members`: an array (comma‑separated list) of user names to add to the group.
+
+- You can also rename a group. First, rename the distinguished name using:
+
+  ```ps1
+  Rename-ADObject -Identity "TesterGrp" -NewName "Sales-Managers"
+  ```
+
+  > Note: This cmdlet only changes the object's distinguished name (the CN portion). It does not update the SamAccountName or DisplayName.
+
+  To update the SAM account name and display name after renaming, use Set-ADGroup:
+
+  ```ps1
+  Set-ADGroup -Identity "TesterGrp" -DisplayName "Sales-Managers" -SamAccountName "Sales-Managers"
+  ```
+
+**Removing a Group**
+
+- To remove a group from Active Directory, use the Remove-ADGroup cmdlet as shown below.
+
+  ```ps1
+  Remove-ADGroup -Identity "Sales-Managers"
+  ```
+
+  When prompted to confirm, type `Y` (for Yes) and press Enter.
 
 ### Creating Shared Folders
 
