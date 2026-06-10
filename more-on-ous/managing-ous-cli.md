@@ -308,23 +308,20 @@ By default, the New-SmbShare cmdlet grants the "Everyone" group Read access to t
 
 ### Configuring NTFS permissions
 
-- Before making any changes, check the current permission granted on the folder.
+- Before making any changes, verify the current permissions assigned to the folder.
 
   ```ps1
   (Get-Acl -Path "C:\RichTech-Shares\Compliance").Access
   ```
 
-  - (): parentheses force the enclosed command to execute first and return its result as an object
-    that can be further accessed in the pipeline or by property access.
-  - .Access : contains a collection of access rules (System.Security.AccessControl.AuthorizationRuleCollection),
-    each representing an access control entry (ACE)
+  > Note: The parentheses () force the enclosed Get-Acl command to execute first, returning a DirectorySecurity object. The .Access property then retrieves the collection of Access Control Entries (ACEs) from that object.
 
 - NTFS permissions are stored in the folder's ACL therefore to change permission, we will:
   - Get the current ACL.
     ```ps1
     $acl = Get-Acl -Path "C:\RichTech-Shares\Compliance"
     ```
-  - Create a new access rule.
+  - Create a new access rule using the .NET `FileSystemAccessRule` class.
 
     ```ps1
     $rule = New-Object System.Security.AccessControl.FileSystemAccessRule(
@@ -336,22 +333,24 @@ By default, the New-SmbShare cmdlet grants the "Everyone" group Read access to t
     )
     ```
 
-    - User / Group -> "Compliance-Team"
-    - Permission -> "Full Control", "Modify", "Read & Execute", "Read", "Write", "List Folder Content"
-    - Inheritance Flags -> "ContainerInherit", "ObjectInheritance"
-    - Propagation Flag -> "NoPropagateInherit", "InheritOnly"
-    - Access Control Type -> "Allow", "Deny"
+    > Parameter Breakdown
 
-  - Add the rule to the ACL.
+    > - dentityReference: The user or group (e.g., "Compliance-Team". Best practice: Use the domain prefix, such as "RICHTECH\Compliance-Team", to prevent ambiguity).
+    > - FileSystemRights: The permission level. Valid .NET enum values include FullControl, Modify, ReadAndExecute, Read, Write, and ListDirectory.
+    > - InheritanceFlags: Determines how the rule applies to child objects. Valid values are ContainerInherit (applies to subfolders), ObjectInherit (applies to files), or None.
+    > - PropagationFlags: Controls how inheritance is passed down. Valid values are None, NoPropagateInherit (applies to this folder and immediate children only), or InheritOnly (does not apply to the current folder, only to children).
+    > - AccessControlType: Specifies whether the rule is an "Allow" or "Deny" rule.
+
+  - Add the rule to the ACL to the ACL object in memory.
     ```ps1
     $acl.AddAccessRule($rule)
     ```
-  - Write the ACL back to the folder.
+  - Write the ACL back to the folder on the file system.
     ```ps1
     Set-Acl -Path "C:\RichTech-Shares\Compliance" -AclObject $acl
     ```
 
-- Verify using the command below:
+- Verify that the new permissions were applied successfully by filtering the output for readability.
   ```ps1
   (Get-Acl -Path "C:\RichTech-Shares\Compliance").Access | Select-Object IdentityReference, FileSystemRights
   ```
