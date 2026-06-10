@@ -259,6 +259,99 @@ Log into RICHTECH-DC01 and open PowerShell. By default, it should open as admini
 
 ### Creating Shared Folders
 
+- Create the folder you intend to share on the server's local disk.
+
+  ```ps1
+  New-Item -Path "C:\RichTech-Shares\Compliance" -ItemType Directory
+  ```
+
+- Create an SMB(Server Message Block) share for the newly created folder to make it accessible over the network.
+
+  ```ps1
+  New-Smbshare -Name "Compliance" -Path "C:\RichTech-Shares\Compliance"
+  ```
+
+- Verify that the share was created successfully by listing all existing SMB shares.
+
+  ```ps1
+  Get-Smbshare
+  ```
+
+- You can also check verify the default share-level access permissions assigned to the folder.
+
+  ```ps1
+  Get-SmbShareAccess -Name "Compliance"
+  ```
+
 ### Configuring Network Share Permissions
 
+By default, the New-SmbShare cmdlet grants the "Everyone" group Read access to the new share.
+
+- To prevent unauthorised network access, revoke the default "Everyone" permission.
+
+  ```ps1
+    Revoke-SmbShareAccess -Name "Compliance" -AccountName "Everyone"
+  ```
+
+  > Note: Note: When prompted for confirmation, type Y and press Enter. Alternatively, you can append
+  > the -Force parameter to the command to suppress the prompt.
+
+- Grant the "Compliance-Team" security group Full Control at the share level.
+  ```ps1
+  Grant-SmbShareAccess -Name "Compliance" -AccountName "Compliance-Team" -AccessRight Full
+  ```
+  > Note: While many administrators set Share permissions to "Everyone: Full Control" and rely exclusively on
+  > NTFS permissions as the single source of truth, restricting Share permissions to specific security groups
+  > provides an additional layer of defense-in-depth. Alternatively, some administrators grant "Change" access
+  > at the share level as a safety net. This ensures that if a user is mistakenly granted "Full Control" at the
+  > NTFS level, the more restrictive Share permission prevents them from taking ownership or altering permissions.
+
 ### Configuring NTFS permissions
+
+- Before making any changes, check the current permission granted on the folder.
+
+  ```ps1
+  (Get-Acl -Path "C:\RichTech-Shares\Compliance").Access
+  ```
+
+  - (): parentheses force the enclosed command to execute first and return its result as an object
+    that can be further accessed in the pipeline or by property access.
+  - .Access : contains a collection of access rules (System.Security.AccessControl.AuthorizationRuleCollection),
+    each representing an access control entry (ACE)
+
+- NTFS permissions are stored in the folder's ACL therefore to change permission, we will:
+  - Get the current ACL.
+    ```ps1
+    $acl = Get-Acl -Path "C:\RichTech-Shares\Compliance"
+    ```
+  - Create a new access rule.
+
+    ```ps1
+    $rule = New-Object System.Security.AccessControl.FileSystemAccessRule(
+      "Compliance-Team",
+      "Modify",
+      "ContainerInherit,ObjectInherit",
+      "None",
+      "Allow"
+    )
+    ```
+
+    - User / Group -> "Compliance-Team"
+    - Permission -> "Full Control", "Modify", "Read & Execute", "Read", "Write", "List Folder Content"
+    - Inheritance Flags -> "ContainerInherit", "ObjectInheritance"
+    - Propagation Flag -> "NoPropagateInherit", "InheritOnly"
+    - Access Control Type -> "Allow", "Deny"
+
+  - Add the rule to the ACL.
+    ```ps1
+    $acl.AddAccessRule($rule)
+    ```
+  - Write the ACL back to the folder.
+    ```ps1
+    Set-Acl -Path "C:\RichTech-Shares\Compliance" -AclObject $acl
+    ```
+
+- Verify using the command below:
+  ```ps1
+  (Get-Acl -Path "C:\RichTech-Shares\Compliance").Access | Select-Object IdentityReference, FileSystemRights
+  ```
