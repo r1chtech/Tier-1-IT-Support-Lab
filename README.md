@@ -28,12 +28,12 @@ For realism, I used the fictional company name RICHTECH, though you can replace 
 
 - [Lab Overview](#lab-overview)
 - [Requirements](#requirements)
-- [Setting Up Server](#setting-up-server)
-- [Adding OUs, Users and Groups](#adding-ous-users-and-groups)
-- [Setting Up Client Computers](#setting-up-client-computers)
-- [Configuring Group Policy Objects](#configuring-group-policy-objects)
-- [More on OUs, Users and Groups](#more-on-ous-users-and-groups)
-- [Support Examples](#support-examples)
+- [Setting Up Server](#setting-up-server-)
+- [Adding OUs, Users and Groups](#adding-ous-users-and-groups-)
+- [Setting Up Client Computers](#setting-up-client-computers-)
+- [Configuring Group Policy Objects](#configuring-group-policy-objects-)
+- [More on OUs, Users and Groups](#more-on-ous-users-and-groups-)
+- [Support Examples](#support-examples-)
 - [Resources](#resources)
 
 ### Lab Overview
