@@ -283,6 +283,8 @@ Log into RICHTECH-DC01 and open PowerShell. By default, it should open as admini
   Get-SmbShareAccess -Name "Compliance"
   ```
 
+  ![](../images/more-on-ous-images/shared-cli-1.png)
+
 ### Configuring Network Share Permissions
 
 By default, the New-SmbShare cmdlet grants the "Everyone" group Read access to the new share.
@@ -293,18 +295,22 @@ By default, the New-SmbShare cmdlet grants the "Everyone" group Read access to t
     Revoke-SmbShareAccess -Name "Compliance" -AccountName "Everyone"
   ```
 
-  > Note: Note: When prompted for confirmation, type Y and press Enter. Alternatively, you can append
+  > Note: When prompted for confirmation, type Y and press Enter. Alternatively, you can append
   > the -Force parameter to the command to suppress the prompt.
 
 - Grant the "Compliance-Team" security group Full Control at the share level.
+
   ```ps1
   Grant-SmbShareAccess -Name "Compliance" -AccountName "Compliance-Team" -AccessRight Full
   ```
+
   > Note: While many administrators set Share permissions to "Everyone: Full Control" and rely exclusively on
   > NTFS permissions as the single source of truth, restricting Share permissions to specific security groups
   > provides an additional layer of defense-in-depth. Alternatively, some administrators grant "Change" access
   > at the share level as a safety net. This ensures that if a user is mistakenly granted "Full Control" at the
   > NTFS level, the more restrictive Share permission prevents them from taking ownership or altering permissions.
+
+  ![](../images/more-on-ous-images/shared-cli-2.png)
 
 ### Configuring NTFS permissions
 
@@ -351,6 +357,9 @@ By default, the New-SmbShare cmdlet grants the "Everyone" group Read access to t
     ```
 
 - Verify that the new permissions were applied successfully by filtering the output for readability.
+
   ```ps1
   (Get-Acl -Path "C:\RichTech-Shares\Compliance").Access | Select-Object IdentityReference, FileSystemRights
   ```
+
+  ![](../images/more-on-ous-images/shared-cli-3.png)
