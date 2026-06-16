@@ -49,8 +49,25 @@ _Try to describe your resolution in writing, then complete it in the labs. Keep 
 
   > Subject: Cannot access fileserver01
 
-  > I am unable to access fileserver01. I can successfully browse the internet and access external websites, but I cannot connect to the file server.
-
-The issue started today; I was able to access fileserver01 without any problems yesterday.
+  > Hi IT, I am unable to access fileserver01. I can successfully browse the internet and access external websites, but I cannot connect to the file server.
+  > The issue started today; I was able to access fileserver01 without any problems yesterday.
 
 - [Ticket 5](ticket-5.md)
+
+  > Priority: Medium
+
+  > Submitted by: Sarah Jensen
+
+  > Department: Finance
+
+  > Subject: Unable to Print to Finance Office Printer
+
+  > Hi IT,
+  >
+  > I am unable to print to the Finance department printer `FIN-PRN-02`.
+  >
+  > When I send documents to the printer, the print jobs remain in the queue and eventually display an error stating **"Printer is offline."**
+  >
+  > I have restarted my computer and confirmed that I am connected to the corporate network, but the issue persists.
+  >
+  > My colleagues are able to print successfully, so the issue appears to be affecting only my workstation.
