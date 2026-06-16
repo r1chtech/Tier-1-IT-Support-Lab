@@ -41,4 +41,16 @@ _Try to describe your resolution in writing, then complete it in the labs. Keep 
 
 - [Ticket 4](ticket-4.md)
 
+  > Priority: Medium
+
+  > Submitted by: Bob Marsh
+
+  > Department: Sales
+
+  > Subject: Cannot access fileserver01
+
+  > I am unable to access fileserver01. I can successfully browse the internet and access external websites, but I cannot connect to the file server.
+
+The issue started today; I was able to access fileserver01 without any problems yesterday.
+
 - [Ticket 5](ticket-5.md)

@@ -18,8 +18,6 @@ If everything is true, check if Carol is connected to right network as a last re
 
 > Note: Escalate to a senior IT member if none of the above resolves the issue.
 
-**Closing Ticket**
-
 **Work Note Example**
 
 - Ticket received from Carol in Finance Department reporting that she is unable to access the finance shared folder.

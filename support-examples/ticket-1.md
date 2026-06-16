@@ -25,8 +25,6 @@ I would also explain that, since this is her first login, Windows may take a few
 
 It will also be a great opportunity to check that shared folder works. I would instruct Alice to open the file explorer. I would ask her to type `\\RICHTECH\Sales` in the address bar (where the file path display). If this succeed without any permission errors then great if not, then I would need to look into permissions and groups.
 
-**Closing Ticket**
-
 **Work Note Example**
 
 - Received call from Alice Carter, new starter in Sales i.e. unable to log in on first day

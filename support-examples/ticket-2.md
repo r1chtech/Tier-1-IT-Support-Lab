@@ -13,8 +13,6 @@ Hi IT, it's David from Finance. I've been trying to log in this morning but I ke
 
 Firstly, due to the nature of this ticket, it would be a good idea to cotact David to make sure that he is the on who has created this ticket for security reasons. Ask for the exact error. When it is confirmed that indeed David's account is locked, check active directory users and find David. Click on the account tab and check unlock. Then right click on David and reset password.
 
-**Closing Ticket**
-
 **Work Note Example**
 
 - Ticket received from David in the Finance department reporting that his account was locked out.
