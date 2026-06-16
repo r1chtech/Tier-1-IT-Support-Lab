@@ -53,3 +53,5 @@ If network connectivity is confirmed, attempt to access the server directly usin
 - Based on results, escalated to the Infrastructure/Network team for further investigation.
 
 User informed of next steps.
+
+[Next ticket](./ticket-5.md)

@@ -41,3 +41,5 @@ It will also be a great opportunity to check that shared folder works. I would i
 No further issues reported. Resolved.
 
 > Simulate this using the lab.
+
+[Next ticket](./ticket-2.md)

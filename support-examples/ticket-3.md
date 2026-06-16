@@ -29,3 +29,5 @@ If everything is true, check if Carol is connected to right network as a last re
 - Cause of group membership removal undetermined — flagged to senior IT member.
 
 No further issues reported. Resolved.
+
+[Next ticket](./ticket-4.md)
